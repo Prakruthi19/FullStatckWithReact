@@ -4,34 +4,41 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import NavBar from './components/NavBar'
 import Filter from './components/Filter'
-import { apiurl , filteredData} from './data'
+import Cards from './components/Cards'
+import Spinner from './components/Spinner'
+import { apiurl , filterData} from './data'
 
 function App() {
-  const [courses, setCourses] = useState(null);
-  const [category, setCategory] = useState(filteredData[0].title);
+  const [loading, setloading] = useState(true);
+  const [courses, setCourses] = useState({});
+  const [category, setCategory] = useState(filterData[0].title);
   async function fetchdata() {
+    setloading(true);
     try{
       let response = await fetch(apiurl);
       let output = await response.json();
-      console.log(output);
-      setCourses(output);
+      setCourses(output.data);
     }
     catch(error) {
       console.log("ERROR");
 
     }
+    setloading(false);
   }
   useEffect(() =>{
-    fetchdata()}, []);
+    fetchdata(); }, []);
   return (
     <>
     <div><NavBar/>
     <Filter
-    filteredData = {filteredData}
+    filterData = {filterData}
     category = {category}
     setCategory = {setCategory}
-    // {/* <Cards courses = {courses} category = {category}></Cards> */}
     />
+    <div>
+    { loading? <Spinner/> :<Cards courses = {courses} category = {category}></Cards>}
+    </div>
+    
     </div>
     </>
   )

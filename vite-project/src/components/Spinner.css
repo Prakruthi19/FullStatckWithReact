@@ -1,0 +1,30 @@
+.spinner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Horizontally center */
+    align-items: center;     /* Vertically center */
+    height: 100vh;           /* Full viewport height */
+  }
+  
+  .spinner {
+    width: 56px;
+    height: 56px;
+    border: 11.2px #474bff double;
+    border-left-style: solid;
+    border-radius: 50%;
+    animation: spinner-aib1d7 0.75s infinite linear;
+  }
+  .loading-text {
+    font-size: 18px;
+    color: #333;
+    justify-content: center; 
+    align-items: center;       
+}
+
+  @keyframes spinner-aib1d7 {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
