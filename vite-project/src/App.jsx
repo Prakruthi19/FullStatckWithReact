@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import './index.css'
 import './App.css'
 import NavBar from './components/NavBar'
 import Filter from './components/Filter'
@@ -29,17 +28,28 @@ function App() {
     fetchdata(); }, []);
   return (
     <>
-    <div><NavBar/>
+    {/* <div className='bg-bgDark2'>
+          <h1 className="text-10xl font-bold underline">
+          Hello from vite project world!
+        </h1>
+        </div> */}
+     
+    <div className='min-h-screen flex flex-col bg-bgDark2'>
+    <div>
+      <NavBar/>
+    </div>
+    <div className='bg-bgDark2'>
     <Filter
     filterData = {filterData}
     category = {category}
     setCategory = {setCategory}
     />
-    <div>
+    </div>
+  <div className = "w-11/12 max-w-[1200px] mx-auto flex flex-wrap justify-center items-center min-h-[50vh]"> 
     { loading? <Spinner/> :<Cards courses = {courses} category = {category}></Cards>}
     </div>
-    
     </div>
+
     </>
   )
 };
