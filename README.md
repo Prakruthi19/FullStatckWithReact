@@ -27,4 +27,9 @@ This project is a simple web application that displays a list of courses. Users 
 3. **Install dependencies**
    ```bash
    npm install
-
+4. **Set up Tailwind CSS**
+   Follow the steps in this link - https://tailwindcss.com/docs/guides/vite
+5. **Start the development server**
+   ```bash
+   npm run dev
+   
