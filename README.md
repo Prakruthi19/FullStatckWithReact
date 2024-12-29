@@ -20,3 +20,11 @@ This project is a simple web application that displays a list of courses. Users 
 
    ```bash
    git clone https://github.com/Prakruthi19/FullStatckWithReact
+
+2. **Navigate to the project directory**
+   ```bash
+   cd <project-directory>
+3. **Install dependencies**
+   ```bash
+   npm install
+
