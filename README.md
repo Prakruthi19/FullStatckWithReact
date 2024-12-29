@@ -34,6 +34,6 @@ This project is a simple web application that displays a list of courses. Users 
    npm run dev
    
 **Technologies Used**
-React: JavaScript library for building user interfaces.
-Tailwind CSS: Utility-first CSS framework for styling.
-Node.js: JavaScript runtime for building server-side applications.
+- React: JavaScript library for building user interfaces.
+- Tailwind CSS: Utility-first CSS framework for styling.
+- Node.js: JavaScript runtime for building server-side applications.
