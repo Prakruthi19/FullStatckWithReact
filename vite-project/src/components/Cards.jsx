@@ -19,6 +19,20 @@ const Cards = (props) =>
             })
             return allcourses;
         }
+
+        else if (category == 'Liked Courses')
+        {
+            let likedcoursesarray = [];
+            
+            Object.values(courses).forEach(array => {
+                array.forEach(course => {
+                if (likedcourse.includes(course.id)) {
+                likedcoursesarray.push(course);
+                }
+            });
+        });
+            return likedcoursesarray;
+        }
         else
         {
             return courses[category];
